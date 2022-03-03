@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <button id="pileface">pile ou face</button>
+    <div id="pilef"></div>
+   <!--  <script type="text/javascript">
+        var monbouton = document.querySelector('#pileouface');
+        var divPile = document.querySelector('#pilef');
+        monbouton.addEventListener('click', function(){
+            divPile.innerHTML = pileouface();
+        })
+        
+        function pileouface(){
+        var randomPiece = Math.floor(Math.random() *2);
+        /* if (randomPiece >= 1){
+            return 'Pile';
+        }else{
+            return 'Face';
+        }   */
+        return randomPiece >= 1 ? 'Pile': 'Face';
+        }
+        </script> -->
+        <script>
+            var buttonPile = document.querySelector('#pileface');
+ var divPile = document.querySelector('#pilef');
+ buttonPile.addEventListener('click', function(){
+     divPile.innerHTML = pileOuface();
+ });
+ function pileOuface(){
+     var randomPiece = Math.floor(Math.random() * 2);
+     /* if (randomPiece >= 1){
+         return 'Pile';
+     }else{
+         return 'Face';
+     } */
+     return randomPiece >= 1 ? 'Pile':'Face'; //ternaire
+ }
+        </script>
+</body>
+</html>
+

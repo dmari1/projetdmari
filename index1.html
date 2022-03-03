@@ -1,0 +1,30 @@
+<!doctype html>
+<html>
+   <head>
+</head> 
+<body>
+    <button onclick="incrementer()">Incrementer !</button>
+    <button onclick="resetCounter()">Reset</button>
+    <div>Cliquer sur le bouton pour incrémenter !</div>
+    <h3 id="counter-label">0</h3>
+<script type="text/javascript">
+var counterVal = 0;
+function incrementer() {
+    updateDisplay(++counterVal);
+}
+
+function resetCounter() {
+    counterVal = 0;
+    updateDisplay(counterVal);
+}
+
+function updateDisplay(val) {
+    document.getElementById("counter-label").innerHTML = val;
+}
+
+</script>
+
+
+
+</body>
+</html>

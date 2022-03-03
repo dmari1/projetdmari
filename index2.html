@@ -1,0 +1,19 @@
+<!doctype html>
+<html>
+   <head>
+</head> 
+<body>
+   <button onclick="tablede3()">table de 3 !</button>
+ <div>Cliquer sur un bouton pour afficher la table de multiplication</div>
+<script type="text/javascript">
+var mytable = "";
+        for(i = 1; i <= 10; i++){
+        mytable += `3 * ${i} = ${i * 3} </br> `;
+}
+
+var madiv= document.querySelector("div");
+madiv.innerHTML = mytable;
+
+</script>
+</body>
+</html>
