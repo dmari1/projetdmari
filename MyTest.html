@@ -1,0 +1,181 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <link href="Test.css" rel="stylesheet">
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Mon Prototype</title>
+</head>
+<header>
+    <div class="rectangle">
+      <img src="projetimage/logotest.png"  alt="mon_logo" id="logo">   
+        <h1> COMPANY LOGO </h1>
+    </div>
+    <div id="wrap">
+      <ul class="navbar">
+        <li>
+          <a class="borderhome" href="#">HOME</a>
+          <ul>
+            <li><a href="#">Menu Styles</a></li>
+            <li><a href="#">Sliders</a></li>
+            <li><a href="#">More Features</a></li>
+          </ul>
+        </li>
+        
+         <li>
+          <a class="companyborder" href="#">COMPANY</a>
+          <ul>
+            <li><a href="#">About Us</a></li>
+            <li><a href="#">Contact Us</a></li>
+            <li><a href="#">Custom Pages</a></li>
+          </ul>
+        </li>
+        
+        <li>
+          <a class="portfolioborder" href="#">PORTFOLIO</a>
+          <ul>
+            <li><a href="#">Two Columns</a></li>
+            <li><a href="#">Three Columns</a></li>
+            <li><a href="#">More Layouts</a></li>
+          </ul>
+        </li>
+        
+      
+        <li>
+          <a class="productborder" href="#">PRODUCTS</a>
+          <ul>
+            <li><a href="#">Product Category 1</a></li>
+            <li><a href="#">Product Category 2</a></li>
+            <li><a href="#">Custom Template</a></li>
+          </ul>
+        </li>
+        
+        <li>
+          <a class="blogborder" href="#">BLOG</a>
+          <ul>
+            <li><a href="#">Post Types</a></li>
+            <li><a href="#">Latest News</a></li>
+            <li><a href="#">Custom Blog</a></li>
+          </ul>
+        </li>
+        
+        
+        </ul>
+        </div>
+</header>
+<body>
+    <br>
+    <div id="bandeau_horizontal">
+    </div>
+    <br>
+    <div class="rectangle1">
+      <p id="detailtext"> Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor <u style="text-decoration-color: red;">do eius mod tempor</u> labore et <br> dolore magna aliqua. Ut enim ad minim veniam</p>
+</div>
+<div>
+<dl>
+    <dt class="welcomedetail">WELCOME</dt>
+    <br>
+    <dd class="welcometext">Lorem ipsum dolor sit amet</dd>
+</dl>
+<img src="projetimage/phototest4.png" alt="phototest4" id="phototest4">
+<p id="detailtext1">Lorem ipsum dolor sit amet,<br>consectetur adipisicing elit. Duis nec<br>purus tellus, quis pulvinar tortor.<br>Sed mattis lobortis gravida.</p>
+<a href="MyTest2.html" class="btn" id="success">Read More</a>
+</div>
+<br>
+<script>
+function defilImgHrz(el,srcs,pas,tps) {
+  if(typeof el=="string") { el = document.getElementById(el); }
+  var tps = tps || 10;
+  var pas = pas || 1;
+  var imgs = [];
+  var offset = 0;
+  for(var i=0,l=srcs.length;i<l;i++) {
+    var img = new Image();
+    img.src = srcs[i];
+    imgs.push(img);
+    img.style.height=el.offsetHeight+"px";
+    img.style.position = "absolute";
+    img.style.left = offset+"px";
+    el.appendChild(img);
+    offset += img.offsetWidth;
+  }
+  var first = 0;
+  var last = imgs.length-1;
+  (function d() {
+    for(var i=0,l=imgs.length;i<l;i++) {
+      var left = parseInt(imgs[i].style.left,10);
+      imgs[i].style.left = (left-pas)+"px";
+      if(i==first && (left-pas+imgs[i].offsetWidth)<0) {
+        imgs[i].style.left = 
+        (parseInt(imgs[last].style.left,10)+imgs[last].offsetWidth-(i==0?pas:0))+"px";
+        last = first++;
+        if(first>imgs.length-1) { first = 0; }
+      }
+    }
+    setTimeout(d,tps);
+  })();
+}
+window.onload=function() {
+    defilImgHrz('bandeau_horizontal',[
+    "projetimage/phototest.png",
+    "projetimage/phototest1.png",
+    "projetimage/phototest2.png",
+    "projetimage/phototest3.png"
+  
+  ]);
+};
+</script>
+
+</body>
+
+<footer>
+  <div>
+    <h2 class="listh2">CONTACT DETAILS</h2>
+    <ul class="listul1">
+      <li>63739 street lorem ipsum<br>City, Country</li>
+      <li>+1 123 312 32 23</li>
+      <li>
+        <a class="infocomstyle" style="color:white" href="info@company.com">info@company.com</a>
+      </li>
+      <li>
+        <a class="supcompanystyle" style="color:white" href="support@company.com">support@company.com</a>
+      </li>
+    </ul>
+    <h3 class="listh3"> TWITTER FEEDS</h3>
+    <ul class="listul2">
+      <li>
+        <i style="color: white" >about 5 hours ago</i>
+      </li>
+      <li> Pragmatic, pratical front sizing in<br>CSS 
+        <a class="lienstyle" style="color: white" href="http://t.co/K6m0VzL4">http://t.co/K6m0VzL4</a> 
+      </li>
+    </ul>
+    <h4 class="listh4">RECENT POSTS</h4>
+    <ul class="listul3">
+      <li>01 MAR 2012</li>
+      <li>Gallery post Tpye</li>
+      <li>Lorem ipsum dolor sit amet,<br>consectetur adipiscing elit. Sed et<br>ligula quis urna placerat<br>fermentum....</li>
+    </ul>
+      <h5 class="listh5">WIDGETIZED FOOTER</h5>
+      <ul class="listul4">
+      <li>Lorem ipsum dolor sit amet,<br>consectetur adipiscing elit. Nulla at<br>felis mi, at auctor mi. Donec vel nibh<br>sem. Etiam ut lacus a dui accumsan<br>accumsan. Aenean vel orci elit.</li>
+    </ul>
+  </div>
+  <br>
+  <a class="last1" href="Press">Press |</a>  
+  <a class="last2" href="Company Blog">Company Blog |</a>  
+  <a class="last3" href="Contact Us">Contact Us |</a>  
+  <a class="last4" href="About Us">About Us</a>
+  <p class="copyrightcolor">
+    Copyright © 2011 Company Name Inc.
+  </p>
+  <img class="msgicone" src="projetimage/messageicone.png" alt="messageicone">
+  <img class="fbicone" src="projetimage/facebookicone.png" alt="facebookicone">
+  <img class="twticone" src="projetimage/tweetsicone.png" alt="tweetsicone">
+  <img class="gplusicone" src="projetimage/gplusicone.png" alt="gplusicone">
+</footer> 
+
+</html>
+
