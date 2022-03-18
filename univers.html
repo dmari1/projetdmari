@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <link href="newstyle.css" rel="stylesheet">
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ANIME WORLD</title>
+  </head>
+  <header>
+    <nav>
+      <ul class="menu">
+        <li>
+         <span style="color: yellow">D r a g</span><img class="boulecristal" src="bouledecristal.png" alt="bouledecristal"> <span style="color: yellow">n</span><span style="color: red">B a l l</span><span style="color: red"> Z</span>
+          <ul class="sub-menu">
+            <li style="color:rgb(0, 140, 255)"> Terre </li>
+          </ul>
+        </li>
+<li>
+          <span style="color: orange">Naruto</span><img class="boulecristal" src="konoha.png" alt="konoha"><span style="color:dodgerblue">Shippuden</span> 
+          <ul class="sub-menu">
+            <li style="color: orange">Konoha</li>
+          </ul>
+        </li>
+        <li>         
+          <span style="color:red">F a i r y</span><img class="boulecristal" src="symboleFT.png" alt="symbolefairytail"><span style="color: red">T a i l</span>
+          <ul class="sub-menu">
+            <li style="color:red">Earthland</li>
+          </ul>
+        </li>
+        <li>         
+         <span style="color:yellow">D r a g</span><img class="boulecristal" src="bouledecristal.png" alt="bouledecristal"><span style="color: red">B a l l</span><span style="color: grey">Super</span>  
+          <ul class="sub-menu">
+            <li style="color: grey">Univers</li>
+          </ul>
+        </li>
+      </ul>
+    </nav>
+  </header>
+  <body class="universwallpaper">
+    <div class="title">ANIME WORLD </div>   
+    <div id="bandeau_horizontal"></div>
+    <br>
+    <br>
+<h1 class="uni7">UNIVERS 7</h1>
+<br>
+<div id="bandeau_horizontal2"></div>
+<br>
+<br>
+<h2 class="uni11">UNIVERS 11</h2>
+
+
+<script>
+function defilImgHrz(el,srcs,pas,tps) {
+  if(typeof el=="string") { el = document.getElementById(el); }
+  var tps = tps || 50;
+  var pas = pas || 5;
+  var imgs = [];
+  var offset = 0;
+  for(var i=0,l=srcs.length;i<l;i++) {
+    var img = new Image();
+    img.src = srcs[i];
+    imgs.push(img);
+    img.style.height=el.offsetHeight+"px";
+    img.style.position = "absolute";
+    img.style.left = offset+"px";
+    el.appendChild(img);
+    offset += img.offsetWidth;
+  }
+  var first = 0;
+  var last = imgs.length-1;
+  (function d() {
+    for(var i=0,l=imgs.length;i<l;i++) {
+      var left = parseInt(imgs[i].style.left,10);
+      imgs[i].style.left = (left-pas)+"px";
+      if(i==first && (left-pas+imgs[i].offsetWidth)<0) {
+        imgs[i].style.left = 
+        (parseInt(imgs[last].style.left,10)+imgs[last].offsetWidth-(i==0?pas:0))+"px";
+        last = first++;
+        if(first>imgs.length-1) { first = 0; }
+      }
+    }
+    setTimeout(d,tps);
+  })();
+}
+
+defilImgHrz('bandeau_horizontal',[
+    "gokuultra.jpg",
+    "gohan.jpg",
+    "piccolo.jpg",
+    "vegetablue.jpg",
+    "trunks.jpg",
+    "beeruswhis.jpg",
+    "krillin.jpg"
+  ]);
+
+  function univers11(el,srcs,pas,tps) {
+  if(typeof el=="string") { el = document.getElementById(el); }
+  var tps = tps || 50;
+  var pas = pas || 5;
+  var imgs = [];
+  var offset = 0;
+  for(var i=0,l=srcs.length;i<l;i++) {
+    var img = new Image();
+    img.src = srcs[i];
+    imgs.push(img);
+    img.style.height=el.offsetHeight+"px";
+    img.style.position = "absolute";
+    img.style.left = offset+"px";
+    el.appendChild(img);
+    offset += img.offsetWidth;
+  }
+  var first = 0;
+  var last = imgs.length-1;
+  (function d() {
+    for(var i=0,l=imgs.length;i<l;i++) {
+      var left = parseInt(imgs[i].style.left,10);
+      imgs[i].style.left = (left-pas)+"px";
+      if(i==first && (left-pas+imgs[i].offsetWidth)<0) {
+        imgs[i].style.left = 
+        (parseInt(imgs[last].style.left,10)+imgs[last].offsetWidth-(i==0?pas:0))+"px";
+        last = first++;
+        if(first>imgs.length-1) { first = 0; }
+      }
+    }
+    setTimeout(d,tps);
+  })();
+}
+
+univers11('bandeau_horizontal2',[
+    "jiren.png",
+    "jiren2.png",
+    "toppo.jpg",
+    "dyspo.jpg",
+    "jiren4.jpg",
+    "jitody.jpg",
+    "gvsj.jpg"
+  ]);
+
+  
+
+</script>
+  </body>
+</html>
